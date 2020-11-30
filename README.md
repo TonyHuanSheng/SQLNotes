@@ -56,3 +56,17 @@ EX:查詢資料表
 ```ruby
 SELECT * FROM test;
 ```
+
+### DCL(資料控制語言)
+用來控制不同資料庫、表、使用者的存取權限
+
+常用指令:GRANT(給予權限)、REVOKE(收回權限)
+
+EX:給於使用者「Andy」有查詢資料庫「test01」中的「test」資料表權限
+```ruby
+GRANT SELECT ON test01.test to 'andy';
+```
+EX: 收回使用者「Andy」對資料庫「test01」中「test」表的查詢權限
+```ruby
+REVOKE SELECT ON test01.test from 'andy';
+```
