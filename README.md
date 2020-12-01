@@ -101,7 +101,18 @@ SELECT * FROM test;
 * 使用COMMIT or ROLLBACK結束當前交易，系統會自動啟動另一個新的交易，交易狀態會永遠是open狀態
 
 ```
-
+SET AutoCommit=0;
+INSERT INTO test VALUES(2,'andy');
+INSERT INTO test VALUES(3,'Tyler');
+SELECT * FROM test;
+ROLLBACK;
+SELECT * FROM test;
+INSERT INTO test VALUES(4,'king');
+INSERT INTO test VALUES(5,'iris');
+SELECT * FROM test;
+COMMIT;
+SELECT * FROM test;
+SET AutoCommit=1;
 ```
 ### DCL(資料控制語言)
 用來控制不同資料庫、表、使用者的存取權限
