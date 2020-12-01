@@ -143,3 +143,10 @@ REVOKE SELECT ON test01.test from 'andy';
 整數屬性
 + Unsigned表示無法使用負號
 + ZEROFILL位數不足以0補足
+
+|浮點數類型|Byte|描述|
+|--------|----|--------------|
+|FLOAT|4|範圍-3.40E+38 ~ 3.40E+38|
+|DOUBLE|8|範圍-1.79E+308 ~ 1.79E+308|
+|DECIMAL(M,D)、DEC(M,D)||M+2 儲存完全精準的數值，D為小數點後幾位，整數位最多只能到(M-D)|
+EX：Decimal(5,3) - 12.345(O) 123.34(X)
