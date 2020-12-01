@@ -26,18 +26,18 @@ DCL(Data Control Languages):資料控制語言
 
 MySQL 
 EX:建立資料表
-```ruby
+```Mysql
 CREATE TABLE test(id    INT,
                   name  VARCHAR(20));
 ```
 
 EX:移除資料表
-```ruby
+```Mysql
 DROP TABLE test;
 ```
 
 EX:資料表名稱修改
-```ruby
+```Mysql
 ALTER TABLE test RENAME test2;
 ```
 
@@ -45,7 +45,7 @@ ALTER TABLE test RENAME test2;
 用於查詢數據
 
 EX:查詢資料表
-```ruby
+```Mysql
 SELECT * FROM test;
 ```
 
@@ -56,17 +56,17 @@ SELECT * FROM test;
 常用指令: INSERT(新增)、DELETE(刪除)、UPDATA(更新)。
 
 EX: 在資料表內新增紀錄
-```ruby
+```Mysql
 INSERT INTO test VALUES (1,'Nini');
 ```
 
 EX:將資料表內name為"Nini"紀錄刪除
-```ruby
+```Mysql
 DELETE FROM test WHERE name= 'Nini' ;
 ```
 
 EX:更新資料表內name為"Nini"紀錄的id
-```ruby
+```Mysql
 UPDATA test SET id=2 WHERE name='Nini';
 ```
 ### TCL(交易控制語言)
@@ -86,7 +86,7 @@ UPDATA test SET id=2 WHERE name='Nini';
 * ROLLBACK 回滾當前事務，取消其更改。
 * SET autocommit 禁用或啟用當前會話的默認自動提交模式。
 還沒ROLLBACK，紀錄不會回到資料表
-```ruby
+```Mysql
 START TRANSACTION;
 INSERT INTO test VALUES(2,'andy');
 INSERT INTO test VALUES(3,'Tyler');
@@ -100,7 +100,7 @@ SELECT * FROM test;
 
 * 使用COMMIT or ROLLBACK結束當前交易，系統會自動啟動另一個新的交易，交易狀態會永遠是open狀態
 
-```
+```Mysql
 SET AutoCommit=0;
 INSERT INTO test VALUES(2,'andy');
 INSERT INTO test VALUES(3,'Tyler');
@@ -120,11 +120,11 @@ SET AutoCommit=1;
 常用指令:GRANT(給予權限)、REVOKE(收回權限)
 
 EX:給於使用者「Andy」有查詢資料庫「test01」中的「test」資料表權限
-```ruby
+```Mysql
 GRANT SELECT ON test01.test to 'andy';
 ```
 EX: 收回使用者「Andy」對資料庫「test01」中「test」表的查詢權限
-```ruby
+```Mysql
 REVOKE SELECT ON test01.test from 'andy';
 ```
 
@@ -133,4 +133,11 @@ REVOKE SELECT ON test01.test from 'andy';
 數值類型又分為整數類型、浮點數類型、定點數類型、位元類型
 
 |整數類型|Byte|描述|
-|T
+|--------|----|--------------|
+|TINYINT|1|範圍-128 ~ 128 or 0 ~ 255 unsigned: -2^7 ~  2^7-1 |
+|SMALLINT|2|範圍-32768 ~ 32767 or 0 ~ 65535 unsigned: -2^15 ~  2^15-1 |
+|MEDIUMINT|3|範圍-8,388,608 ~ 8,388,607 or 0 ~ 16,777,215 unsigned: -2^23 ~  2^23-1|
+|INT、INTEGER|4|範圍-2,147,483,648 ~ 2,147,483,647 or 0 ~ 4,294,967,295 unsigned: -2^31 ~  2^31-1|
+|BIGINT|8|unsigned: -2^63 ~  2^63-1|
+
+
