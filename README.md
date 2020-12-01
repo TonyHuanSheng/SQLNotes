@@ -134,10 +134,12 @@ REVOKE SELECT ON test01.test from 'andy';
 
 |整數類型|Byte|描述|
 |--------|----|--------------|
-|TINYINT|1|範圍-128 ~ 128 or 0 ~ 255 unsigned: -2^7 ~  2^7-1 |
-|SMALLINT|2|範圍-32768 ~ 32767 or 0 ~ 65535 unsigned: -2^15 ~  2^15-1 |
-|MEDIUMINT|3|範圍-8,388,608 ~ 8,388,607 or 0 ~ 16,777,215 unsigned: -2^23 ~  2^23-1|
-|INT、INTEGER|4|範圍-2,147,483,648 ~ 2,147,483,647 or 0 ~ 4,294,967,295 unsigned: -2^31 ~  2^31-1|
-|BIGINT|8|unsigned: -2^63 ~  2^63-1|
+|TINYINT|1|範圍-2^7 ~ 2^7-1 or unsigned:0 ~ 2^8-1|
+|SMALLINT|2|範圍-2^15 ~ 2^15-1 or unsigned:0 ~ 2^16-1|
+|MEDIUMINT|3|範圍-2^23 ~ 2^23-1 or unsigned: 0 ~ 2^24-1|
+|INT、INTEGER|4|範圍-2^31 ~ 2^31-1 or unsigned: 0 ~ 2^32-1|
+|BIGINT|8|範圍-2^63 ~ 2^63-1 or unsigned: 0 ~ 2^64-1|
 
-
+整數屬性
++ Unsigned表示無法使用負號
++ ZEROFILL位數不足以0補足
