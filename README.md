@@ -5,6 +5,7 @@
 ### 參考網址:https://www.mysql.tw/2013/03/sqlddldmldcltcl.html
 
 SQL 主要分類個類別。
+
 DDL(Data Definition Languages):資料定義語言
 
 DQL(Data Query Languages):資料查詢語言
