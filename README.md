@@ -6,10 +6,15 @@
 
 SQL 主要分類個類別。
 DDL(Data Definition Languages):資料定義語言
+
 DQL(Data Query Languages):資料查詢語言
+
 DML(Data Manipulation Languages):資料操作語言
+
 TCL(Transaction Control Language):交易控制語言
+
 DCL(Data Control Languages):資料控制語言
+
 
 ### DDL(資料定義語言)
 
