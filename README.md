@@ -4,6 +4,7 @@
 ### 參考網址:https://kknews.cc/zh-tw/tech/ae53e8x.html
 ### 參考網址:https://www.mysql.tw/2013/03/sqlddldmldcltcl.html
 
+###SQL全稱是 Structured Query Language，翻譯後就是結構化查詢語言
 SQL 主要分類個類別。
 
 DDL(Data Definition Languages):資料定義語言
