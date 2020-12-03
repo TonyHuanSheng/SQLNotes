@@ -178,3 +178,12 @@ N代表Byte長度
 |LONGTEXT/Longblob||圍為0到4294967295 Byte(4GB)，值的長度會再加上4 Byte紀錄長度|
 |Binary(N)|N|範圍為0到255 Byte之間|
 |Varbinary(N)||N+1Byte(M<255) N+2Byte(M>255) 範圍為0到65535 Byte之間|
+
+### Char VS varchar
+Char採用固定長度儲存方式，在建立表格時就可以設計好，若輸入的值沒有到最大長度時，系統也會分配到最大的儲存空間，不過在值尾部的空格都會被刪除，而varchar為可變字串，會根據使用情況分配儲存空間，可以節省儲存空間，但尾部的空格不會被刪除。
+
+### Blob VS text
+Blob與text都是可變長度，在存取值時，也都不會刪除尾部的空格，不一樣在於Blob可儲存二進制物件(圖片)，text則只能儲存文字
+
+### Binary VS varbinary
+Binary和varbinary與char、varchar型態類似，差異在binary與varbinary儲存二進制字串，是非字符型字符串，排序和比較都依照二進制值進行對比。
