@@ -151,3 +151,30 @@ REVOKE SELECT ON test01.test from 'andy';
 |DOUBLE|8|範圍-1.79E+308 ~ 1.79E+308|
 |DECIMAL(M,D)、DEC(M,D)、NUMERIC||M+2 儲存完全精準的數值，D為小數點後幾位，整數位最多只能到(M-D)|
 EX：Decimal(5,3) - 12.345(O) 123.34(X)
+
+|日期時間類型|Byte|描述|
+|------------|-----|----|
+|DATA|3|範圍1000-01-01 ~ 9999-12-31|
+|DATATIME|8|範圍1000-01-01 00:00:00 ~ 9999-12-31 23:59:59|
+|TIMESTAMP|4|範圍為1970010108001到2038年某時刻，查詢時也會顯示’YYYY-MM-DD HH:MM:SS’格式|
+|TIME|3|範圍為-838:59:59到838:59:59|
+|YEAR|1|範圍為1901到2155|
+
+### Datatime VS Timestamp
+看起來Datatime與Timestamp非常類似，但還是有不同的地方，Datatime的範圍最多可以到西元9999年，可是Timestamp只能到2038年，範圍比較小，而Timestamp的格式在插入值時會先轉換本地時區，同時在查詢時也會把日期轉換到本地時區，能夠反映出在其他地區查詢的正確時間，Datatime則是維持當時插入的日期。
+
+補充一點：如果在Timestamp格式輸入Null值會自動設置為當日系統時間。
+M代表字元長度
+N代表Byte長度
+
+|字串類型|Byte|描述|
+|-------|----|-----|
+|CHAR(M)/binary(M)|M|M長度範圍為0到255之間，為固定長度|
+|VARCHAR(M)/varbinary(M)||M+1Byte(M<255)|
+|M+2Byte(M>255)||M長度範圍為0到65535之間，為可變長度，值的長度會再加上1Byte紀錄長度|
+|TINYTEXT/Tinyblob||範圍為0到255 Byte，值的長度會再加上1Byte紀錄長度|
+|TEXT/Blob||範圍為0到65535 Byte(65KB)，值的長度會再加上2 Byte紀錄長度|
+|MEDIUMTEXT/MediumBlob||圍為0到16777215 Byte(16MB)，值的長度會再加上3 Byte紀錄長度|
+|LONGTEXT/Longblob||圍為0到4294967295 Byte(4GB)，值的長度會再加上4 Byte紀錄長度|
+|Binary(N)|N|範圍為0到255 Byte之間|
+|Varbinary(N)||N+1Byte(M<255) N+2Byte(M>255) 範圍為0到65535 Byte之間|
