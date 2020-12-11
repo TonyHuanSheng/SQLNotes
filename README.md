@@ -17,6 +17,8 @@ TCL(Transaction Control Language):交易控制語言
 
 DCL(Data Control Languages):資料控制語言
 
+後段工程師 最基本要求 「CRUD」
+(分別為 Create, Retrieve, Update, Delete英文四字首字母縮略的術語)
 
 ### DDL(資料定義語言)
 
