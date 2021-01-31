@@ -194,3 +194,25 @@ Blob與text都是可變長度，在存取值時，也都不會刪除尾部的空
 Binary和varbinary與char、varchar型態類似，差異在binary與varbinary儲存二進制字串，是非字符型字符串，排序和比較都依照二進制值進行對比。
 
 <h2 id="001">MySQL問題及解決</h2>  
+
+mysql修改root密碼
+
+mysql5.7版本 W10
+(1)
+系統管理員cmd>net user administrator /active:yes
+取得Windows 管理權限
+
+>net stop mysql57
+停止mysql核心
+
+OR
+
+(2)
+快捷鍵 win+R
+輸入 services.msc
+
+![image](https://github.com/twTonyLai/SQLNotes/blob/main/image/win%2BR.PNG)
+
+開啟服務後找到mysql
+關閉服務
+![image](https://github.com/twTonyLai/SQLNotes/blob/main/image/services.msc.PNG)
