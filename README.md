@@ -1,4 +1,6 @@
 # SQLNotes
+* ## [MySQL問題及解決](#001) #
+
 
 ### 參考網址:https://ithelp.ithome.com.tw/articles/10234683
 ### 參考網址:https://kknews.cc/zh-tw/tech/ae53e8x.html
@@ -190,3 +192,5 @@ Blob與text都是可變長度，在存取值時，也都不會刪除尾部的空
 
 ### Binary VS varbinary
 Binary和varbinary與char、varchar型態類似，差異在binary與varbinary儲存二進制字串，是非字符型字符串，排序和比較都依照二進制值進行對比。
+
+<h2 id="001">MySQL問題及解決</h2>  
