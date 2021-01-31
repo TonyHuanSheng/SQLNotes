@@ -202,7 +202,7 @@ mysql5.7版本 W10
 系統管理員cmd>net user administrator /active:yes
 取得Windows 管理權限
 
->net stop mysql57
+cmd >net stop mysql57
 停止mysql核心
 
 OR
@@ -214,5 +214,6 @@ OR
 ![image](https://github.com/twTonyLai/SQLNotes/blob/main/image/win%2BR.PNG)
 
 開啟服務後找到mysql
-關閉服務
 ![image](https://github.com/twTonyLai/SQLNotes/blob/main/image/services.msc.PNG)
+
+關閉服務
